@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: #f0f2f5;
+        }
+        .pq{
+            margin: auto;
+            max-width: 500px;/* max-width: is use for smalling box will content split down*/
+            text-align: center;
+        }
+        .qp{
+            margin: auto;
+            max-width: 500px;/* max-width: is use for smalling box will content split down*/
+            text-align: center;
+        }
+        .timer{
+            margin: auto;
+            text-align: center;
+            margin-top: 200px;
+            max-width: 600px;
+            font-size: 50px;
+            font-family: cursive;
+        }
+        .p{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="p">
+        <p class="pq"><strong>Tip: </strong> Hii Bro Jai mahrashtra</p>
+        <p class="qp"><strong>Note: </strong>WHat should i do?</p>
+    </div>
+    <div class="timer" id="timer">START</div>
+    <span></span>
+
+</body>
+<script>
+    var a=0;
+    
+    function timer() {
+        var date=new Date()+"";
+        var newdate=date.substring(0, 24);
+        document.querySelectorAll('.timer')[0].innerHTML="Today Date : "+newdate;
+        var oldString = document.getElementById('timer').innerHTML;
+        var string="<span style='font:italic bold 13px/15px Georgia, serif; color: red' </span>";
+        var nstring="<span style='color:black' </span>";
+        document.getElementById("timer").innerHTML=nstring+oldString.substring(0,a)+string+ oldString.charAt(a)+nstring+oldString.substring(a+1,37);
+        a+=1;
+        if (a==37) {
+            a=0;
+            b=1;
+        }
+
+    }
+    clr=setInterval(timer, 1000);
+</script>
+</html>
